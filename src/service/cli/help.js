@@ -14,6 +14,6 @@ module.exports = {
     --help:               печатает этот текст
     --generate <count>    формирует файл mocks.json`;
 
-    console.log(chalk.gray(text));
+    console.log(chalk`{gray ${text}}`);
   }
 };
