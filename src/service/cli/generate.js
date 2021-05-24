@@ -23,7 +23,7 @@ const readContent = async (filePath) => {
     const content = await fs.readFile(filePath, `utf8`);
     return content.split(`\n`).map((x) => x.trim());
   } catch (err) {
-    console.error(chalk.red(err));
+    showError(err);
     return [];
   }
 };
@@ -75,13 +75,15 @@ const readTemplates = async () => {
   return {sentences, titles, categories};
 };
 
+const showError = (errorText) => console.info(chalk.red(errorText));
+
 module.exports = {
   name: `--generate`,
   async run(args) {
     const [count] = args;
     const publicationsAmount = Number.parseInt(count, 10) || DEFAULT_COUNT;
     if (publicationsAmount > MAX_COUNT) {
-      console.info(chalk.red(`Не больше ${MAX_COUNT} элементов.`));
+      showError(`Не больше ${MAX_COUNT} элементов.`);
       process.exit(EXIT_CODES.error);
     }
 
@@ -94,7 +96,7 @@ module.exports = {
       console.info(chalk.green(`Файл сгенерирован.`));
       process.exit(EXIT_CODES.success);
     } catch (err) {
-      console.error(chalk.red(`Возникла ошибка при формировании файла...`));
+      showError(`Возникла ошибка при формировании файла...`);
       process.exit(EXIT_CODES.error);
     }
   }
