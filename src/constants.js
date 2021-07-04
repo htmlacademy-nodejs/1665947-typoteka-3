@@ -9,3 +9,8 @@ module.exports.EXIT_CODES = {
   success: 0,
   error: 1
 };
+
+module.exports.HTTP_CODE = {
+  OK: 200,
+  NOT_FOUND: 404,
+};
