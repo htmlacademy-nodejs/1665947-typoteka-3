@@ -4,6 +4,7 @@
   "description": "Типотека",
   "main": "./src/service/service.js",
   "scripts": {
+    "server": "nodemon ./src/service/service.js --server 3000",
     "start": "node ./src/service/service.js",
     "test": "npm run eslint",
     "eslint": "eslint --ext .js src/"
@@ -20,7 +21,8 @@
   "homepage": "https://github.com/cat-in-magic-hat/1665947-typoteka-3#readme",
   "devDependencies": {
     "eslint": "7.25.0",
-    "eslint-config-htmlacademy": "0.6.0"
+    "eslint-config-htmlacademy": "0.6.0",
+    "nodemon": "2.0.9"
   },
   "dependencies": {
     "chalk": "^4.1.1",
