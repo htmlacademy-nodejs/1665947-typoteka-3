@@ -3,7 +3,7 @@
 const getFullRoute = (request) => {
   const {baseUrl, route: {path: routePath}} = request;
   return routePath === `/`
-    ? (baseUrl === `` ? `/` : baseUrl)
+    ? baseUrl || `/`
     : `${baseUrl}${routePath}`;
 };
 
