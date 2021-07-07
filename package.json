@@ -5,6 +5,7 @@
   "main": "./src/service/service.js",
   "scripts": {
     "server": "nodemon ./src/service/service.js --server 3000",
+    "start-front-server": "node ./src/express/express.js",
     "start": "node ./src/service/service.js",
     "test": "npm run eslint",
     "eslint": "eslint --ext .js src/"
@@ -26,6 +27,7 @@
   },
   "dependencies": {
     "chalk": "^4.1.1",
-    "date-fns": "^2.21.1"
+    "date-fns": "^2.21.1",
+    "express": "4.17.1"
   }
 }
